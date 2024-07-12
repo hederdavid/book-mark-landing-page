@@ -1,0 +1,43 @@
+<section class="container pt-52 flex flex-col px-6 text-center gap-4">
+  <h2 class="flex justify-center text-3xl text-veryDarkBlue font-bold">Features</h2>
+  <p class="text-lg text-grayishBlue">
+    Our aim is to make it quick and easy for you to access your favourite websites.
+    Your bookmarks sync between your devices so you can access them on the go.
+  </p>
+
+  <div class="mt-8">
+    <div class="flex flex-col justify-center border-b">
+
+      <div class="border-t flex justify-center">
+        <div class="cursor-pointer p-3 w-44" 
+        [ngClass]="{ 'border-b-4 border-orange-500': selectedOption === 'bookmarking' }"
+        (click)="selectOption('bookmarking')">
+        Simple Bookmarking
+        </div>
+      </div>
+
+      <div class="border-t flex justify-center">
+        <div class="cursor-pointer p-3 w-44"
+        [ngClass]="{ 'border-b-4 border-orange-500': selectedOption === 'searching' }"
+        (click)="selectOption('searching')">
+        Speedy Searching
+        </div>
+      </div>
+      
+      <div class="border-t flex justify-center">
+        <div class="cursor-pointer p-3 w-44"
+        [ngClass]="{ 'border-b-4 border-orange-500': selectedOption === 'sharing' }"
+        (click)="selectOption('sharing')">
+        Easy Sharing
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mt-8 text-center">
+    <img [src]="selectedImage" alt="Selected Image" class="mx-auto" *ngIf="selectedImage">
+    <h3>{{ selectedTitle }}</h3>
+    <p class="text-lg text-grayishBlue mt-4">{{ selectedText }}</p>
+  </div>
+</section>
