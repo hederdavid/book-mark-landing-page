@@ -3,11 +3,12 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { FeaturesComponent } from '../../components/features/features.component';
 import { DownloadExtensionComponent } from '../../components/download-extension/download-extension.component';
+import { FaqComponent } from '../../components/faq/faq.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, HeroComponent, FeaturesComponent, DownloadExtensionComponent],
+  imports: [HeaderComponent, HeroComponent, FeaturesComponent, DownloadExtensionComponent, FaqComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
