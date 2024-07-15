@@ -7,11 +7,11 @@
 
     @for (item of arrayCards(); track $index) {
         <div class="flex flex-col justify-center items-center text-center shadow-xl">
-            <img src="{{ item.img }}" alt="{{ item.alt }}" class="w-28 pb-16">
+            <img src="{{ item.img }}" alt="{{ item.alt }}" class="w-28 py-16">
             <h4 class="text-veryDarkBlue text-xl font-bold pb-3">Add to {{ item.name }}</h4>
             <p class="pb-12 text-grayishBlue">Minimum version {{ item.version }}</p>
-            <img src="assets/images/bg-dots.svg" alt="">
-            <button class="text-white text-lg bg-softBlue px-8 py-3 rounded-md my-6">Add & Install Extension</button>
+            <img src="assets/images/bg-dots.svg" alt="Pontilhado">
+            <button class="text-white text-lg bg-softBlue px-8 py-3 rounded-md my-6 shadow-md">Add & Install Extension</button>
         </div>
     }
     
