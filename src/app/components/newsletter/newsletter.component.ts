@@ -36,7 +36,7 @@ export class NewsletterComponent {
       const formData = new FormData();
       formData.append('to', this.email);
 
-      this.http.post('https://sua-aplicacao-no-railway.railway.app/sendEmail', formData, {responseType: "text"})
+      this.http.post('https://api-sendemail-bookmark-production.up.railway.app', formData, {responseType: "text"})
         .subscribe({
           next: (response) => {
             console.log(response);
