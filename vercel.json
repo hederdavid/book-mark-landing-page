@@ -1,0 +1,9 @@
+{
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "https://railway.app/project/a414d08b-d55b-4f8e-81b6-b6528f3463c5/service/fad41b1b-7e21-4ef6-a1e5-5d0ee616932a"
+      }
+    ]
+  }
+  
