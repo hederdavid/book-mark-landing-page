@@ -1,10 +1,9 @@
-<section class="container pt-40 flex flex-col px-6 text-center items-center">
+<section class="container pt-40 pb-20 flex flex-col px-6 text-center items-center">
     <div class="flex flex-col justify-center items-center gap-4 pb-10">
         <h3 class="text-veryDarkBlue font-bold text-3xl">Frequently Asked Questions</h3>
         <p class="text-grayishBlue text-lg">Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us.</p>
-
     </div>
-
+    
     <div class="flex flex-col gap-2">
         @for (item of arrayFaqs(); track $index) {
             <mat-accordion class="shadow-sm bg-white rounded-lg ">
@@ -17,12 +16,9 @@
             </mat-accordion>
         }
     </div>
+      
 
-    <button class="w-36 py-4 bg-softBlue my-16 text-white rounded-md font-bold">More info</button>
-    
-    
-        
-    
-    
+
+    <button class="w-32 py-4 bg-softBlue my-16 text-white rounded-md font-bold">More info</button>
 
 </section>

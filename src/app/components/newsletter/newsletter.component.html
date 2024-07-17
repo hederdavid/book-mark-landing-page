@@ -1,0 +1,32 @@
+<section class="container pb-20 pt-16 flex flex-col px-6 text-center items-center bg-softBlue text-white">
+  <h4 class="tracking-extra-wide font-light text-sm">35,000+ ALREADY JOINED</h4>
+  <h3 class="text-3xl pt-3">Stay up-to-date with what we’re doing</h3>
+
+
+  <form action="" class="flex flex-col gap-4 pt-8">
+    <div class="relative">
+      <input [(ngModel)]="email" name="email" type="text"
+        class="py-3 pl-6 pr-12 rounded-md placeholder-text-grayishBlue text-veryDarkBlue border-2 active:outline-none active:border-none w-full focus:outline-none"
+        placeholder="Enter your email address"
+        [ngClass]="{ 'border-softRed rounded-b-none border-b-2': !emailCorrectFormat}"
+        (input)="onInputChange()" (click)="activeInput()">
+
+
+      @if (!emailCorrectFormat && isInputActive) {
+      <img src="assets/images/icon-error.svg" alt="Ícone de email errado"
+        class="absolute right-3 top-7 transform -translate-y-1/2 h-5 w-5">
+      }
+
+      @if (!emailCorrectFormat && isInputActive) {
+      <div class="bg-softRed rounded-bl-md rounded-br-md flex items-center justify-start pl-4">
+        <p class="text-xs italic py-1">Whoops, make sure it's an email</p>
+      </div>
+      }
+
+    </div>
+    <button class="bg-softRed py-3 rounded-md">Contact Us</button>
+  </form>
+
+
+
+</section>

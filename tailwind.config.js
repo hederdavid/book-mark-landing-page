@@ -11,6 +11,10 @@ module.exports = {
         grayishBlue: 'hsl(229, 8%, 60%)',
         veryDarkBlue: 'hsl(229, 31%, 21%)',
       },
+
+      letterSpacing: {
+        'extra-wide': '0.3em', // Defina o valor que você deseja
+      },
     },
   },
   plugins: [],
