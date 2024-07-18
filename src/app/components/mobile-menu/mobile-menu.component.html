@@ -1,0 +1,27 @@
+@if (isOpen) {
+<div class="w-screen h-screen fixed inset-0 bg-veryDarkBlue opacity-95 flex flex-col justify-between        items-center z-50">
+    <div class="text-white rounded-lg p-6">
+        <div class="flex justify-between w-screen px-6 pb-16">
+            <h2 class="text-center text-2xl font-bold">BOOKMARK</h2>
+            <button class="" (click)="closeMenu()">
+                <img src="assets/images/icon-close.svg" alt="Fechar">
+            </button>
+        </div>
+
+        <ul class="text-center space-y-4 flex flex-col gap-2">
+            <li class="border-t pt-6 border-grayishBlue"><a href="#" class="block text-xl">FEATURES</a></li>
+            <li class="border-t pt-6 border-grayishBlue"><a href="#" class="block text-xl">PRICING</a></li>
+            <li class="border-y py-6 border-grayishBlue"><a href="#" class="block text-xl">CONTACT</a></li>
+
+            <li class="flex justify-center">
+                <a href="#" class="block text-xl border-2 rounded py-2 px-4 w-4/5">LOGIN</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="pb-10 flex gap-10">
+        <img src="assets/images/icon-facebook.svg" alt="Ícone facebook">
+        <img src="assets/images/icon-twitter.svg" alt="Ícone twitter">
+    </div>
+</div>
+}
