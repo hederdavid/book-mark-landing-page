@@ -22,7 +22,7 @@ export class HeaderComponent {
 
   openMenu(): void {
     this.menuService.toggleMenu(true);
-    this.isClosed = false
+    this.isClosed = true
   }
 
 }
