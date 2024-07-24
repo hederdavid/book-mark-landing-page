@@ -1,9 +1,9 @@
-<section class="container pb-20 pt-16 flex flex-col px-6 text-center items-center bg-softBlue text-white">
+<section class="container pb-16 pt-16 flex flex-col px-6 text-center items-center bg-softBlue text-white">
   <h4 class="tracking-extra-wide font-light text-sm">35,000+ ALREADY JOINED</h4>
   <h3 class="text-3xl pt-3">Stay up-to-date with what we’re doing</h3>
 
 
-  <form (ngSubmit)="sendEmail()" class="flex flex-col gap-4 pt-8">
+  <form (ngSubmit)="sendEmail()" class="flex flex-col gap-4 pt-8 items-center">
     <div class="relative">
       <input [(ngModel)]="email" name="email" type="text"
         class="py-3 pl-6 pr-12 rounded-md placeholder-text-grayishBlue text-veryDarkBlue border-2 active:outline-none active:border-none w-full focus:outline-none"
@@ -24,17 +24,23 @@
       }
 
     </div>
-    <button type="submit" class="bg-softRed py-3 rounded-md">Contact Us</button>
+    
+    <button type="submit" class="bg-softRed py-3 rounded-md w-full">Contact Us</button>
+
+    @if (botaoClicado) {
+      <div class="flex flex-row gap-2 pt-6">
+        <div class="w-2 h-2 rounded-full bg-white animate-bounce"></div>
+        <div class="w-2 h-2 rounded-full bg-white animate-bounce [animation-delay:-.3s]"></div>
+        <div class="w-2 h-2 rounded-full bg-white animate-bounce [animation-delay:-.5s]"></div>
+      </div>
+    }
+
+    @if (emailEnviado && emailEnviado != null) {
+      <p class=" bg-white rounded-md p-3 text-green-400">Enviado com sucesso!</p>
+    } @else if (!emailEnviado && emailEnviado != null) {
+      <p class="bg-white rounded-md p-3 text-red-400">Algo deu errado...</p>
+    }
+
+
   </form>
-  @if (botaoClicado) {
-    <div class="flex items-center justify-center bg-gray-200 p-4 rounded-full">
-      <mat-spinner color="primary" diameter="50" strokeWidth="5"></mat-spinner>
-    </div>
-    
-    
-}
-
-
-
-
 </section>

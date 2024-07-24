@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-newsletter',
@@ -12,13 +12,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   styleUrls: ['./newsletter.component.scss']
 })
 export class NewsletterComponent {
-
   public email: string = '';
   public emailCorrectFormat = true;
   public isInputActive = false;
-  public emailEnviado: boolean = true;
-  public mensagemDeResposta: string = this.email ? "Email recebido! Logo mais entraremos em contado." : "Houve um erro ao receber seu email... Tente novamente."
-  public botaoClicado: boolean = true;
+  public emailEnviado: boolean | null = null;
+  public botaoClicado: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -39,18 +37,21 @@ export class NewsletterComponent {
     if (this.emailCorrectFormat && this.email != '') {
       const formData = new FormData();
       formData.append('to', this.email);
+      this.botaoClicado = true;
 
-      this.http.post('https://api-sendemail-bookmark-production.up.railway.app/sendEmail', formData, {responseType: "text"})
+      this.http.post('https://api-sendemail-bookmark-production.up.railway.app/sendEmail', formData, { responseType: 'text' })
         .subscribe({
-          next: async (response) => {
-            this.botaoClicado = true;
-            this.emailEnviado = true;
-            await this.sleep(3000) 
+          next: (response) => {
             this.botaoClicado = false;
+            this.emailEnviado = true;
+            this.waitAndResetButton();
             console.log(response);
           },
           error: (error) => {
             console.error('Erro ao enviar o email', error);
+            this.botaoClicado = false;
+            this.waitAndResetButton();
+            this.emailEnviado = false;
           }
         });
 
@@ -59,7 +60,9 @@ export class NewsletterComponent {
     }
   }
 
-  sleep(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  waitAndResetButton() {
+    setTimeout(() => {
+      this.emailEnviado = null;
+    }, 3000); // Aguarda 3 segundos (3000 milissegundos)
   }
 }
