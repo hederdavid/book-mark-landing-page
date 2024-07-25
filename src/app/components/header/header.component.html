@@ -1,12 +1,31 @@
 @if (!isClosed) {
-    <div class="container flex justify-between pt-6 px-6 ">
+    <div class="container flex justify-between pt-6 px-6 lg:pt-12">
         <img class="object-contain" src="assets/images/logo-bookmark.svg" alt="Logo BookMark">
         <nav>
-            <button (click)="openMenu()">
+            <button (click)="openMenu()" class="lg:hidden">
                 <img src="assets/images/icon-hamburger.svg" alt="Ícone de abrir a navegação em dispositivos mobile" class="">
             </button>
+
+            <ul class="hidden lg:flex text-veryDarkBlue gap-8 items-center">
+                <li class="hover:text-softRed transition-all duration-300">
+                    <a href="#">FEATURES</a>
+                </li>
+
+                <li class="hover:text-softRed transition-all duration-300">
+                    <a href="#">PRICING</a>
+                </li>
+
+                <li class="hover:text-softRed transition-all duration-300">
+                    <a href="#">CONTACT</a>
+                </li>
+
+                <li>
+                    <button class="bg-softRed text-white rounded-md px-9 py-2 shadow-md border-2 border-softRed transition-all duration-300 hover:bg-white hover:text-softRed hover:border-softRed">
+                        <a href="#">LOGIN</a>
+                    </button>
+                </li>
+            </ul>
         </nav>
-        
     </div>
     
 }

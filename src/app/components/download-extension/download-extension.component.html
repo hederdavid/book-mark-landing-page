@@ -1,19 +1,27 @@
 <section class="container pt-40 flex flex-col px-6 text-center items-center gap-20">
     <div class="flex flex-col gap-4">
         <h3 class="text-veryDarkBlue font-bold text-3xl">Download the extension</h3>
-        <p class="text-grayishBlue text-lg">We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.</p>
+        <p class="text-grayishBlue text-lg lg:max-w-xl">We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.</p>
 
     </div>
 
-    @for (item of arrayCards(); track $index) {
-        <div class="flex flex-col justify-center items-center text-center shadow-xl">
-            <img src="{{ item.img }}" alt="{{ item.alt }}" class="w-28 py-16">
-            <h4 class="text-veryDarkBlue text-xl font-bold pb-3">Add to {{ item.name }}</h4>
-            <p class="pb-12 text-grayishBlue">Minimum version {{ item.version }}</p>
-            <img src="assets/images/bg-dots.svg" alt="Pontilhado">
-            <button class="text-white text-lg bg-softBlue px-8 py-3 rounded-md my-6 shadow-md">Add & Install Extension</button>
-        </div>
-    }
+    <div class="lg:flex lg:h-85vh lg:gap-8">
+        @for (item of arrayCards(); track $index) {
+            <div class="flex flex-col justify-center items-center text-center shadow-xl"
+                [ngClass]="{
+                    'self-start': item.id === 1,
+                    'self-center': item.id === 2,
+                    'self-end': item.id === 3
+                }">
+                <img src="{{ item.img }}" alt="{{ item.alt }}" class="w-28 py-16">
+                <h4 class="text-veryDarkBlue text-xl font-bold pb-3">Add to {{ item.name }}</h4>
+                <p class="pb-12 text-grayishBlue">Minimum version {{ item.version }}</p>
+                <img src="assets/images/bg-dots.svg" alt="Pontilhado">
+                <button class="text-white text-lg bg-softBlue px-8 py-3 rounded-md my-6 shadow-md hover:bg-white hover:border-softBlue border hover:text-softBlue transition-all duration-300">Add & Install Extension</button>
+            </div>
+        }
+    </div>
+    
     
 </section>
 

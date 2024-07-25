@@ -12,6 +12,7 @@ export class DownloadExtensionComponent {
 
   public arrayCards = signal([
     {
+      id: 1,
       img: 'assets/images/logo-chrome.svg',
       alt: 'Logo Google',
       name: 'Chrome',
@@ -19,6 +20,7 @@ export class DownloadExtensionComponent {
     },
 
     {
+      id: 2,
       img: 'assets/images/logo-firefox.svg',
       alt: 'Logo Firefox',
       name: 'Firefox',
@@ -26,6 +28,7 @@ export class DownloadExtensionComponent {
     },
 
     {
+      id: 3,
       img: 'assets/images/logo-opera.svg',
       alt: 'Logo Opera',
       name: 'Opera',

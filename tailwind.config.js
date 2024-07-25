@@ -15,6 +15,10 @@ module.exports = {
       letterSpacing: {
         'extra-wide': '0.3em', // Defina o valor que você deseja
       },
+
+      height: {
+        '85vh': '85vh',
+      },
     },
   },
   plugins: [],
